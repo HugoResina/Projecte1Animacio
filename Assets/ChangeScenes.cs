@@ -14,17 +14,16 @@ public class ChangeScenes : MonoBehaviour
 
     public void IrAEscena()
     {
-        //transitionAnim.SetTrigger("StartTransition");
-
-        //yield return new WaitForSeconds(1);
+        
         SceneManager.LoadScene(nombreEscenaDestino);
+        StartCoroutine(SceneLoad());
     }
-    /*public IEnumerator SceneLoad(int sceneIndex)
+    public IEnumerator SceneLoad()
     {
         transitionAnim.SetTrigger("StartTransition");
 
         yield return new WaitForSeconds(1);
-
-        IrAEscena();
-    }*/
+        SceneManager.LoadScene(nombreEscenaDestino);
+        
+    }
 }

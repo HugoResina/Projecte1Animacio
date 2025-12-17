@@ -1,16 +1,19 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GoBackScene : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public string nombreEscenaDestino = "SampleScene";
+
     void Start()
     {
-        
+        StartCoroutine(CambiarDespuesDeTiempo());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator CambiarDespuesDeTiempo()
     {
-        
+        yield return new WaitForSeconds(12f);  
+        SceneManager.LoadScene(nombreEscenaDestino); 
     }
 }
